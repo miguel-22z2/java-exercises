@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-@SuppressWarnings("unused")
 public class Diakstra {
 
 	private void imprimirResultados(int[] distanciaGrafo, int[] valorAnterior, int valorOrigem, int numeroVertices) {
@@ -19,7 +18,7 @@ public class Diakstra {
 			
 			if (distanciaGrafo[i] == Integer.MAX_VALUE) {
 				
-				System.out.printf("%-10d %-12s %s%n", i, "∞", "Inacessível ");
+				System.out.println(i + " ∞ Inacessível");
 				
 			} else {
 				
@@ -66,7 +65,6 @@ public class Diakstra {
 		while (filaPrioridade.isEmpty() == false) {
 			
 			int[] grafoAtual = filaPrioridade.poll();
-			int distanciaAtual = grafoAtual[0];
 			int auxiliar = grafoAtual[1];
 
 			if (visitado[auxiliar]) {
@@ -74,13 +72,13 @@ public class Diakstra {
 			}
 			
 			visitado[auxiliar] = true;
-
-			for (Aresta aresta : grafo.get(auxiliar)) {
+			
+			for (Aresta arestaAtual : grafo.get(auxiliar)) {
 				
-				int destinoAresta = aresta.getDestino();
-				int pesoAresta = aresta.getPeso();
+				int destinoAresta = arestaAtual.getDestino();
+				int pesoAresta = arestaAtual.getPeso();
 
-				if (!visitado[destinoAresta] && distancia[auxiliar] != Integer.MAX_VALUE && distancia[auxiliar] + pesoAresta < distancia[destinoAresta]) {
+				if (visitado[destinoAresta] && distancia[auxiliar] != Integer.MAX_VALUE && distancia[auxiliar] + pesoAresta < distancia[destinoAresta] == false) {
 					
 					distancia[destinoAresta] = distancia[auxiliar] + pesoAresta;
 					
