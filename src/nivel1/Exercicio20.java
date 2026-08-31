@@ -15,6 +15,7 @@ public class Exercicio20 {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		byte opçao = 0;
+		
 		do {
 			float numero1 = 0;
 			float numero2 = 0;

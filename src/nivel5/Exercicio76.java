@@ -32,8 +32,6 @@ public class Exercicio76 {
         System.out.println("|     /                  |");
         System.out.println("2 ---       ------------5");
         
-        // Rodando método principal:
-        
         dMain.dijkstra(grafo, 0, numeroVertices);
 	}
 }

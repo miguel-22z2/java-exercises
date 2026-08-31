@@ -37,7 +37,7 @@ public class Exercicio75 {
 			
 			Integer opcaoSelecionada = 0;
 			
-			try {
+			try {	
 				opcaoSelecionada = Integer.parseInt(inputOpcao);
 			} catch (NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Coloque uma opção válida!", titulo, JOptionPane.WARNING_MESSAGE, null);
@@ -108,27 +108,27 @@ public class Exercicio75 {
 	public static boolean isAnagrama(String palavra, String anagrama) {
 		
 		if (palavra.isBlank() || palavra.equals(null)) {
-			throw new IllegalArgumentException ("Não é possível passar uma String vazia!");
+			throw new IllegalArgumentException ("is not possible to pass a blank String or null");
 		}
 		
 		if (anagrama.isBlank() || anagrama.equals(null)) {
-			throw new IllegalArgumentException ("Não é possível passar uma String vazia!");
+			throw new IllegalArgumentException ("is not possible to pass a blank String or null");
 		}
 		
-		String palavraFormatada = palavra.replaceAll("[\\s]", "").toLowerCase();
-		String anagramaFormatado = anagrama.replaceAll("[\\s]", "").toLowerCase();
+		String palavraFormatada = palavra.trim().replaceAll(" ", "");
+		String anagramaFormatado = anagrama.trim().replaceAll(" ", "");
 		
 		if (palavraFormatada.length() != anagramaFormatado.length()) {
 			return false;
 		}
 		
-		char[] arrayPalavra = palavraFormatada.toCharArray();
-		char[] arrayAnagrama = anagramaFormatado.toCharArray();
+		char[] caracteresPalavra = palavraFormatada.toCharArray();
+		char[] caracteresAnagrama = anagramaFormatado.toCharArray();
 		
-		Arrays.sort(arrayAnagrama);
-		Arrays.sort(arrayPalavra);
+		Arrays.sort(caracteresAnagrama);
+		Arrays.sort(caracteresPalavra);
 		
-		return Arrays.equals(arrayPalavra, arrayAnagrama);
+		return Arrays.equals(caracteresPalavra, caracteresAnagrama);
 	}
 	
 	public static int anagramasSemRepetir(String palavra) {

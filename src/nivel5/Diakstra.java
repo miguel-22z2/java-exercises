@@ -78,7 +78,7 @@ public class Diakstra {
 				int destinoAresta = arestaAtual.getDestino();
 				int pesoAresta = arestaAtual.getPeso();
 
-				if (visitado[destinoAresta] && distancia[auxiliar] != Integer.MAX_VALUE && distancia[auxiliar] + pesoAresta < distancia[destinoAresta] == false) {
+				if (visitado[destinoAresta] && distancia[auxiliar] != Integer.MAX_VALUE && distancia[auxiliar] + pesoAresta < distancia[destinoAresta]) {
 					
 					distancia[destinoAresta] = distancia[auxiliar] + pesoAresta;
 					

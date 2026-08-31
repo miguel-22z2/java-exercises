@@ -1,8 +1,6 @@
 package nivel3;
 
 import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * O programa vai funcionar desta forma:
@@ -15,25 +13,11 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class Exercicio46 {
 	public static void main(String[] args) {
-		// Alterando LookAndFell:
-		try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-        	System.err.println(ex);
-        } catch (InstantiationException ex) {
-        	System.err.println(ex);
-        } catch (IllegalAccessException ex) {
-        	System.err.println(ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-        	System.err.println(ex);
-        }
+
 		String inputNumero = JOptionPane.showInputDialog(null, "Digite um número:", "Programa", JOptionPane.INFORMATION_MESSAGE);
+		
 		int numero = Integer.parseInt(inputNumero);
+		
 		if (verificarPrimo(numero)) {
 			JOptionPane.showMessageDialog(null, "O número " + numero + " é primo!", "Programa", JOptionPane.INFORMATION_MESSAGE, null);
 		} else {
@@ -43,9 +27,11 @@ public class Exercicio46 {
 
 	public static boolean verificarPrimo(int numero) {
 		boolean ePrimo = true;
+		
 		if (numero <= 1) {
 			ePrimo = false;
 		} else {
+			
 			for (int i = 2; i <= Math.sqrt(numero); i++) {
 				if (numero % i != 0) {
 					ePrimo = true;
@@ -53,6 +39,7 @@ public class Exercicio46 {
 				}
 				ePrimo = false;
 			}
+			
 		}
 		return ePrimo;
 	}

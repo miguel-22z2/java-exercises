@@ -8,9 +8,9 @@ import javax.swing.UIManager;
  * <p>
  * <h4>O programa funciona como um <u>Parser de expressão matemática
  * simples!</u> O programa consegue fazer expressões com os operadores +, -, *,
- * /, ^!</h4>
+ * /!</h4>
  * <p>
- * <h4>O programa lê a expressão da esquerda para a dire8ita!</h4>
+ * <h4>O programa lê a expressão da esquerda para a direita!</h4>
  * <p>
  * 
  * @author Miguel Alessi Lenzi
