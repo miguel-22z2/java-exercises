@@ -2,10 +2,10 @@ package nivel5;
 
 public class Exercicio73 {
 	public static void main(String[] args) {
-		No root = new No(20);
+		NoArvore root = new NoArvore(20);
 		
-		root.esquerda = new No(10);
-		root.direita = new No(5);
+		root.esquerda = new NoArvore(10);
+		root.direita = new NoArvore(5);
 		
 		PercorrerAB p = new PercorrerAB();
 		

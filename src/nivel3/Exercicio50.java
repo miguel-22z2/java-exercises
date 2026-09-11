@@ -25,12 +25,16 @@ public class Exercicio50 {
 		 }
 		 return String.valueOf(c);
 	 }
+	 
 	public static void main(String[] args) {
+		
 		int tentativas = 0;
+		
 		Scanner teclado = new Scanner(System.in);
 		
 			while (true) {
 				mostrarTabuleiro();
+				
 				System.out.print("Jogador " + caracterColorido(jogadorAtual) + ", escolha sua posição: ");
 				String inputPosicao = teclado.next();
 				
@@ -44,11 +48,13 @@ public class Exercicio50 {
 				}
 				
 				try {
+					
 					if (tabuleiro[posicao] == 'X' || tabuleiro[posicao] == 'O') {
 						System.out.println();
 						System.out.println("Posição já selecionada!");
 						continue;
 					}
+					
 				} catch (ArrayIndexOutOfBoundsException e) {
 					System.out.println();
 					System.out.println("Posição inválida!");
@@ -76,8 +82,10 @@ public class Exercicio50 {
 					jogadorAtual = 'X';
 				} 
 			}
+			
 			teclado.close();
 	}
+	
 	public static void mostrarTabuleiro() {
 		System.out.println();
 		System.out.println(" | " + caracterColorido(tabuleiro[0]) + " | " + caracterColorido(tabuleiro[1]) + " | " +  caracterColorido(tabuleiro[2]) + " | ");
@@ -87,6 +95,7 @@ public class Exercicio50 {
 		System.out.println(" | " + caracterColorido(tabuleiro[6]) + " | " + caracterColorido(tabuleiro[7]) + " | " + caracterColorido(tabuleiro[8]) + " | ");
 		System.out.println();
 	}
+	
 	public static boolean verificarVencedor() {
 		int[][] combinacoes = {
 				{0, 1, 2}, {3, 4, 5}, {6, 7, 8},
@@ -96,9 +105,11 @@ public class Exercicio50 {
 		
 		for (int i = 0; i <= combinacoes.length - 1; i++) {
 			int[] posicaoCombinacao = combinacoes[i];
+			
 			if (tabuleiro[posicaoCombinacao[0]] == jogadorAtual && tabuleiro[posicaoCombinacao[1]] == jogadorAtual && tabuleiro[posicaoCombinacao[2]] == jogadorAtual) {
 				return true;
 			}
+			
 		}
 		return false;
 	}

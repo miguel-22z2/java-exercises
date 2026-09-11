@@ -31,6 +31,7 @@ public class PasswordGenerator {
 			senhaGerada += caracteresEspeciais.charAt(random.nextInt(31));
 			senhaGerada += numeros.charAt(random.nextInt(10));
 		}
+		
 		return senhaGerada;
 	}
 }

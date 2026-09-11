@@ -12,7 +12,7 @@ package nivel5;
  * 
  */
 
-public class MainLRU {
+public class Exercicio78 {
 	public static void main(String[] args) {
 		
 		LRU<Integer, String> lru = new LRU<>(3);

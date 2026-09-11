@@ -22,9 +22,9 @@ public class LRU<K, V> extends LinkedHashMap<K, V>{
 	
 	private final int capacidadeLRU;
 	
-	public LRU(int capacidade) {
-		super(capacidade, 0.75f, true);
-		this.capacidadeLRU = capacidade;
+	public LRU(int capacidadeCache) {
+		super(capacidadeCache, 0.75f, true);
+		this.capacidadeLRU = capacidadeCache;
 	}
 	
 	@Override

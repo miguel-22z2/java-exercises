@@ -1,31 +1,31 @@
 package nivel5;
 
 public class PercorrerAB {
-	public void emOrdem(No no) {
-		if (no != null) {
-			emOrdem(no.esquerda);
-			System.out.print(no.valor + " ");
-			emOrdem(no.direita);
+	public void emOrdem(NoArvore noArvore) {
+		if (noArvore != null) {
+			emOrdem(noArvore.esquerda);
+			System.out.print(noArvore.valor + " ");
+			emOrdem(noArvore.direita);
 		}
 	}
 	
-	public void preOrdem(No no) {
-		if (no != null) {
-			System.out.print(no.valor + " ");
-			preOrdem(no.esquerda);
-			preOrdem(no.direita);
+	public void preOrdem(NoArvore noArvore) {
+		if (noArvore != null) {
+			System.out.print(noArvore.valor + " ");
+			preOrdem(noArvore.esquerda);
+			preOrdem(noArvore.direita);
 		}
 	}
 	
-	public void posOrdem(No no) {
-		if (no != null) {
-			posOrdem(no.esquerda);
-			posOrdem(no.direita);
-			System.out.print(no.valor + " ");
+	public void posOrdem(NoArvore noArvore) {
+		if (noArvore != null) {
+			posOrdem(noArvore.esquerda);
+			posOrdem(noArvore.direita);
+			System.out.print(noArvore.valor + " ");
 		}
 	}
 	
-	public Integer estaNaArvore(No root, Integer valor) {
+	public Integer estaNaArvore(NoArvore root, Integer valor) {
 		if (root != null && root.valor == valor) {
 			return root.valor;
 		} else if (root != null && root.valor < valor) {

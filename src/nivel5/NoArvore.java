@@ -1,11 +1,11 @@
 package nivel5;
 
-public class No {
+public class NoArvore {
 	int valor;
-	No esquerda;
-	No direita;
+	NoArvore esquerda;
+	NoArvore direita;
 	
-	No(int valor) {
+	public NoArvore(int valor) {
 		this.valor = valor;
 		esquerda = null;
 		direita = null;

@@ -23,25 +23,35 @@ public class Exercicio41 {
 
 	public static boolean validarCpf(String cpf) {
 		cpf = cpf.replaceAll("\\D", "");
+		
 		if (cpf.length() != 11) {
 			return false;
 		}
+		
 		int soma = 0;
+		
 		for (int i = 0; i < 9; i++) {
 			soma += (cpf.charAt(i) - '0') * (10 - i);
 		}
+		
 		int digitoVerificador1 = (soma * 10) % 11;
+		
 		if (digitoVerificador1 == 10) {
 			digitoVerificador1 = 0;
 		}
+		
 		soma = 0;
+		
 		for (int i = 0; i < 10; i++) {
 			soma += (cpf.charAt(i) - '0') * (11 - i);
 		}
+		
 		int digitoVerificador2 = (soma * 10) % 11;
+		
 		if (digitoVerificador2 == 10) {
 			digitoVerificador2 = 0;
 		}
+		
 		return digitoVerificador1 == (cpf.charAt(9) - '0') && digitoVerificador2 == (cpf.charAt(10) - '0');
 	}
 }
