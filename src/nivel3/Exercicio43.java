@@ -12,10 +12,12 @@ public class Exercicio43 {
 		int numero = 11;
 		System.out.print(fib(numero));
 	}
+	
 	public static int fib(int numero) {
 		if (numero <= 1) {
 			return numero;
 		}
 		return fib(numero - 1) + fib(numero - 2);
 	}
+	
 }
