@@ -5,10 +5,10 @@ public class Usuario {
 	public Usuario() {}
 
 	private String nome;
-	private String idade;
+	private int idade;
 	private String genero;
 
-	public Usuario(String nome, String idade, String genero) {
+	public Usuario(String nome, int idade, String genero) {
 		super();
 		this.nome = nome;
 		this.idade = idade;
@@ -24,11 +24,11 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getIdade() {
+	public int getIdade() {
 		return idade;
 	}
 
-	public void setIdade(String idade) {
+	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 
