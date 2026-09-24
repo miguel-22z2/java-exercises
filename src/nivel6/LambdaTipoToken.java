@@ -4,9 +4,17 @@ public enum LambdaTipoToken {
 	
 	PRINT,
 	SUM,
+	MULTI,
+	DIV,
+	MINES,
+	POW,
+	REST,
 	NUMBER,
 	STRING,
-	λ,
-	FIM
+	INT,
+	BOOLEAN,
+	IDENTIFIER,
+	EQUALS,
+	END
 	
 }

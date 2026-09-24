@@ -1,6 +1,5 @@
 package nivel6;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Exercicio92 {
@@ -31,10 +30,10 @@ public class Exercicio92 {
 			} else if (comando.toLowerCase().equals("exit")) {
 				System.out.println();
 				break;
+			} else if (comando.toLowerCase().equals("lambda") || comando.equals("λ")) {
+				System.out.println("Lambda is an interpreted language created by miguel-22z2 in 2026.\nThis is a basic comand programming language, so you can make tiny thinghs");
 			} else {
-				List<LambdaToken> tokens = lexer.analisar(comando);
-				
-				LambdaParser parser = new LambdaParser(tokens);
+				LambdaParser parser = new LambdaParser(lexer.analisarComandos(comando));
 				
 				parser.analisar();
 			}

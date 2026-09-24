@@ -26,6 +26,7 @@ public class Exercicio27 {
 				}
 			}
 		}
+		
 		JOptionPane.showMessageDialog(null, "Lista original ordenada: " + Arrays.toString(listaNumeros), "Programa",
 				JOptionPane.INFORMATION_MESSAGE, null);
 
@@ -38,6 +39,7 @@ public class Exercicio27 {
  
 			}
 		}
+		
 		temporario[auxiliar2++] = listaNumeros[listaNumeros.length - 1];
 
 		int[] resultadoFinal = Arrays.copyOf(temporario, auxiliar2);
