@@ -1,12 +1,13 @@
 package nivel6;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import utilitarios.Color;
 
 public class LambdaIntepretador {
 
-	private HashMap<String, Integer> variaveisInteiras = new HashMap<String, Integer>();
+	private Map<String, Integer> variaveisInteiras = new HashMap<String, Integer>();
 
 	public void print(String mensagem) {
 		System.out.println(mensagem);
@@ -40,16 +41,47 @@ public class LambdaIntepretador {
 	}
 	
 	public void div(Integer numero1, Integer numero2) {
-		Integer div = numero1 / numero2;
+		Integer div = 0;
+		
+		try {
+			div = numero1 / numero2;
+		} catch (Exception e) {
+			System.out.println(Color.RED + "Cannot divide by 0" + Color.RESET);
+			return;
+		}
+		
 		System.out.println(div);
 	}
 	
 	public void rest(Integer numero1, Integer numero2) {
-		Integer rest = numero1 % numero2;
+		Integer rest = 0;
+		
+		try {
+			rest = numero1 % numero2;
+		} catch (Exception e) {
+			System.out.println(Color.RED + "Cannot divide by 0" + Color.RESET);
+			return;
+		}
+		
 		System.out.println(rest);
 	}
 
 	public void criarVariavelInteira(String identificador, Integer valor) {
+		if (identificador.isBlank() || identificador == null) {
+			System.out.println(Color.RED + "The identifier cannot be blank" + Color.RESET);
+			return;
+		}
+		
+		if (Character.isDigit(identificador.charAt(0))) {
+			System.out.println(Color.RED + "The identifier cannot start with a number" + Color.RESET);
+			return;
+		}
+		
+		if (variavelInteiraExiste(identificador)) {
+			System.out.println(Color.RED + "Cannot add a duplicate variable" + Color.RESET);
+			return;
+		}
+		
 		variaveisInteiras.put(identificador, valor);
 	}
 

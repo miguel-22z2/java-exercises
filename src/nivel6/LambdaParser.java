@@ -57,9 +57,15 @@ public class LambdaParser {
 		posicao++;
 
 		LambdaToken mensagem = tokens.get(posicao);
+		
+		if (mensagem.getConteudo().trim().length() <= 6) {
+			System.out.println(Color.RED + "No a valid print command" + Color.RESET);
+			return;
+		}
 
 		if (mensagem.getTipo() != LambdaTipoToken.STRING) {
-			throw new RuntimeException(Color.RED + "Waiting a text" + Color.RESET);
+			System.out.println(Color.RED + "Waiting a text" + Color.RESET);
+			return;
 		}
 
 		interpretador.print(mensagem.getConteudo());
